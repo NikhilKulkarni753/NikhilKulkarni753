@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | Nikhil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0d0d0d;      /* Matches Home/Skills background */
+            --accent: #d4af37;  /* Matches Home/Skills gold accent */
+            --text: #ffffff;
+            --muted: #b3b3b3;
+            --card-bg: #161616; /* Matches Skill Card background */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* EDUCATION SECTION */
+        .education {
+            padding: 80px 10% 100px;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .education h2 {
+            font-size: 48px;
+            margin-bottom: 50px;
+        }
+
+        .education h2 span {
+            color: var(--accent);
+        }
+
+        .education-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .edu-card {
+            background: var(--card-bg);
+            width: 100%;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            text-align: left;
+            position: relative;
+            transition: 0.4s ease;
+        }
+
+        .edu-card:hover {
+            border-color: var(--accent);
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        /* Year Badge */
+        .year {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .edu-card h3 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .edu-card .institution {
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 15px;
+            display: block;
+            font-style: italic;
+        }
+
+        .edu-card p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* Decorative icon for the card */
+        .edu-card i {
+            position: absolute;
+            right: 40px;
+            top: 40px;
+            font-size: 40px;
+            color: rgba(212, 175, 55, 0.2); /* Faded gold icon */
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .education { padding: 50px 5%; }
+            .education h2 { font-size: 36px; }
+            .edu-card i { display: none; } /* Hide icon on mobile for space */
+            .edu-card { padding: 30px 20px; }
+        }
+    .back-home {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .back-home:hover {
+        color: var(--accent);
+    }
+    </style>
+</head>
+<body>
+
+    <section class="education" id="education">
+        <h2>My <span>Education</span></h2>
+
+        <div class="education-container">
+            <div class="edu-card">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="year">2024 - 2028</span>
+                <h3>Bachelor of Engineering</h3>
+                <span class="institution">Savitribai Phule Pune University</span>
+                <p>Specializing in Computer Science and Design. Maintaining a strong focus on User Interface principles and Full Stack development.</p>
+            </div>
+
+            <div class="edu-card">
+                <i class="fas fa-school"></i>
+                <span class="year">2022 - 2024</span>
+                <h3>Higher Secondary Education</h3>
+                <span class="institution">Balbhim Arts, Science & Commerce College, Beed</span>
+                <p>Completed major in Science and Mathematics with a focus on logical problem solving and technical foundations.</p>
+            </div>
+
+             <div class="edu-card">
+        <i class="fas fa-pencil-alt"></i>
+        <span class="year">2012 - 2022</span>
+        <h3>Primary & Secondary Schooling</h3>
+        <span class="institution">Sanskar Prabodhini’s Sanskar Vidyalaya, Beed</span>
+        <p>Completed foundational education with a focus on core subjects, participating in various extracurricular activities and developing early technical interests.</p>
+    </div>
+        </div>
+         <a href="index.html" class="back-home">← Back to Portfolio</a>
+    </section>
+
+</body>
+</html>

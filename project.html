@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Nikhil</title>
+    <style>
+        /* General Setup */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+        }
+
+        .projects-section {
+            padding: 80px 20px;
+            text-align: center;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .pj {
+            color: #ffcc00;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        /* Container Grid */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Card Design */
+        .project-card {
+            background-color: #262626; 
+            border: 1px solid #333;
+            border-radius: 20px; /* Slightly smoother corners */
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            border-color: #ffcc00;
+            box-shadow: 0 15px 40px rgba(255, 204, 0, 0.1);
+        }
+
+        /* IMAGE FIX SECTION */
+        .project-image {
+            width: 100%;
+            height: 220px; /* Defined height */
+            background-color: #1e1e1e; /* Dark background for letterboxing */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .project-image img {
+            max-width: 100%;
+            max-height: 100%;
+            /* 'contain' ensures the WHOLE image is seen without cropping */
+            object-fit: contain; 
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05); /* Gentle zoom on hover */
+        }
+
+        /* Content Area */
+        .project-content {
+            padding: 25px;
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            margin: 0 0 15px 0;
+            color: #ffcc00;
+            font-size: 1.6rem;
+        }
+
+        .project-content p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #b3b3b3;
+            margin-bottom: 25px;
+            min-height: 75px; /* Keeps card heights uniform */
+        }
+
+        /* Button Styling */
+        .github-link {
+            display: inline-block;
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #ffcc00;
+            padding: 10px 24px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            width: fit-content;
+            margin-top: auto;
+        }
+
+        .github-link:hover {
+            background-color: #ffcc00;
+            color: #1a1a1a;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 60px;
+            color: #888;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">My <span class="pj">Projects</span></h2>
+        
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="wa.png" alt="Weather API Interface">
+                </div>
+                <div class="project-content">
+                    <h3>Weather API</h3>
+                    <p>Real-time data integration featuring instant global updates for temperature, humidity, and wind speed with a responsive UI.</p>
+                    <a href="https://nikhilkulkarni753.github.io/Weather-API-Application/" class="github-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="book.png" alt="Book Store Management">
+                </div>
+                <div class="project-content">
+                    <h3>Book Store</h3>
+                    <p>A inventory management system designed to track stock levels, manage catalogs, and monitor sales analytics.</p>
+                    <a href="https://nikhilkulkarni753.github.io/NikhilKulkarni753/index.html" class="github-link">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-home">← Back to Portfolio</a>
+    </section>
+
+</body>
+</html>

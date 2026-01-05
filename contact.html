@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Nikhil</title>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("6AVfZ9u-g6sgIOxAG");
+   })();
+</script>
+<script src="script.js"></script>
+
+<style>
+    :root {
+        --bg: #0d0d0d; 
+        --accent: #d4af37; 
+        --card-bg: #161616; 
+        --text: #ffffff;
+        --muted: #b3b3b3;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--bg);
+        color: var(--text);
+    }
+
+    .form-box {
+        background: var(--card-bg);
+        padding: 40px;
+        width: 100%;
+        max-width: 450px;
+        border-radius: 20px;
+        border: 1px solid #333;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--accent);
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .input-box {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    .input-box input,
+    .input-box textarea {
+        width: 100%;
+        padding: 12px;
+        background: transparent;
+        border: 1.5px solid #444;
+        outline: none;
+        border-radius: 8px;
+        font-size: 15px;
+        color: var(--text);
+        transition: 0.3s;
+    }
+
+    .input-box label {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        color: var(--muted);
+        font-size: 15px;
+        pointer-events: none;
+        transform: translateY(-50%);
+        transition: 0.3s;
+        padding: 0 5px;
+    }
+
+    /* Move label up on focus/valid */
+    .input-box input:focus ~ label,
+    .input-box input:valid ~ label,
+    .input-box textarea:focus ~ label,
+    .input-box textarea:valid ~ label {
+        top: 0;
+        font-size: 13px;
+        color: var(--accent);
+        background: var(--card-bg);
+    }
+
+    /* Active border color */
+    .input-box input:focus,
+    .input-box textarea:focus {
+        border-color: var(--accent);
+    }
+
+    textarea {
+        resize: none;
+        height: 100px;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        border: 2px solid var(--accent);
+        background: transparent;
+        color: var(--accent);
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.4s;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: var(--accent);
+        color: #000;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Back to Home Link */
+    .back-home {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .back-home:hover {
+        color: var(--accent);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="form-box">
+    <h2>Contact me</h2>
+    <form onsubmit="sendmail(event)">
+
+        <div class="input-box">
+            <input type="text" id="name" pattern="[A-Za-z ]+" required>
+            <label>Name</label>
+        </div>
+
+        <div class="input-box">
+            <input type="email" id="email" required>
+            <label>Email ID</label>
+        </div>
+
+        <div class="input-box">
+            <input type="tel" id="phone" pattern="[0-9]{10}" maxlength="10" required>
+            <label>Phone Number</label>
+        </div>
+
+        <div class="input-box">
+            <textarea id="message" minlength="10" required></textarea>
+            <label>Message</label>
+        </div>
+
+        <button type="submit">Send Message</button>
+    </form>
+    <a href="index.html" class="back-home">← Back to Portfolio</a>
+</div>
+
+</body>
+</html>
