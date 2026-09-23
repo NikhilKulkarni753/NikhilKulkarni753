@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Technical Skills | Nikhil</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           ROOT
+        ===================================================== */
+
+        :root {
+            --bg: #0d0d0d;
+            --bg-secondary: #111111;
+            --card-bg: #161616;
+
+            --accent: #d4af37;
+            --accent-light: #f2d675;
+            --accent-dark: #a98619;
+
+            --text: #ffffff;
+            --muted: #b3b3b3;
+            --border: rgba(255,255,255,0.10);
+
+            --shadow:
+                0 15px 40px rgba(0,0,0,0.45);
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           BACKGROUND GLOW
+        ===================================================== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+
+            top: -200px;
+            left: -200px;
+
+            background: radial-gradient(
+                circle,
+                rgba(212,175,55,0.10),
+                transparent 70%
+            );
+
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+
+            right: -250px;
+            bottom: -200px;
+
+            background: radial-gradient(
+                circle,
+                rgba(212,175,55,0.08),
+                transparent 70%
+            );
+
+            pointer-events: none;
+            z-index: -2;
+        }
+
+
+        /* =====================================================
+           PARTICLES
+        ===================================================== */
+
+        .particles {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+
+            width: 3px;
+            height: 3px;
+
+            background: var(--accent);
+
+            border-radius: 50%;
+
+            opacity: 0.35;
+
+            animation:
+                floatParticle linear infinite;
+        }
+
+        .particle:nth-child(1) {
+            left: 10%;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(2) {
+            left: 20%;
+            animation-duration: 17s;
+            animation-delay: 3s;
+        }
+
+        .particle:nth-child(3) {
+            left: 35%;
+            animation-duration: 14s;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(4) {
+            left: 50%;
+            animation-duration: 19s;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(5) {
+            left: 65%;
+            animation-duration: 13s;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(6) {
+            left: 80%;
+            animation-duration: 18s;
+            animation-delay: 5s;
+        }
+
+        .particle:nth-child(7) {
+            left: 90%;
+            animation-duration: 15s;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatParticle {
+
+            0% {
+                transform: translateY(110vh) scale(0);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.35;
+            }
+
+            80% {
+                opacity: 0.35;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+
+        /* =====================================================
+           SKILLS SECTION
+        ===================================================== */
+
+        .skills {
+            min-height: 100vh;
+
+            padding:
+                90px
+                8%
+                80px;
+
+            position: relative;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .skills-header {
+            text-align: center;
+
+            max-width: 800px;
+
+            margin:
+                0 auto
+                70px;
+
+            animation:
+                headerAppear 1s ease forwards;
+        }
+
+        @keyframes headerAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(-25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .skills-label {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 8px;
+
+            color: var(--accent);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .skills-label::before,
+        .skills-label::after {
+            content: "";
+
+            width: 25px;
+            height: 1px;
+
+            background: var(--accent);
+        }
+
+
+        .skills-header h1 {
+            font-size: clamp(38px, 6vw, 62px);
+
+            line-height: 1.1;
+
+            font-weight: 800;
+
+            margin-bottom: 20px;
+        }
+
+        .skills-header h1 span {
+            color: var(--accent);
+
+            position: relative;
+        }
+
+
+        .skills-header p {
+            color: var(--muted);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            max-width: 650px;
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           SKILLS GRID
+        ===================================================== */
+
+        .skills-container {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* =====================================================
+           SKILL CARD
+        ===================================================== */
+
+        .skill-card {
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.045),
+                    rgba(255,255,255,0.015)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            padding: 35px;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.45s ease,
+                border-color 0.45s ease,
+                box-shadow 0.45s ease;
+
+            opacity: 0;
+            transform: translateY(35px);
+        }
+
+
+        /* Scroll animation */
+
+        .skill-card.show {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease,
+                border-color 0.45s ease,
+                box-shadow 0.45s ease;
+        }
+
+
+        .skill-card:nth-child(2) {
+            transition-delay: 0.08s;
+        }
+
+        .skill-card:nth-child(3) {
+            transition-delay: 0.16s;
+        }
+
+        .skill-card:nth-child(4) {
+            transition-delay: 0.24s;
+        }
+
+        .skill-card:nth-child(5) {
+            transition-delay: 0.32s;
+        }
+
+        .skill-card:nth-child(6) {
+            transition-delay: 0.40s;
+        }
+
+
+        /* Hover */
+
+        .skill-card:hover {
+
+            transform:
+                translateY(-10px);
+
+            border-color:
+                rgba(212,175,55,0.65);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.55),
+                0 0 30px
+                rgba(212,175,55,0.07);
+        }
+
+
+        /* Glow effect */
+
+        .skill-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: -100px;
+            right: -100px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(212,175,55,0.13),
+                    transparent 70%
+                );
+
+            transition:
+                transform 0.5s ease;
+        }
+
+        .skill-card:hover::before {
+            transform: scale(1.8);
+        }
+
+
+        /* =====================================================
+           ICON
+        ===================================================== */
+
+        .skill-icon {
+
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background:
+                rgba(212,175,55,0.10);
+
+            border:
+                1px solid
+                rgba(212,175,55,0.20);
+
+            margin-bottom: 25px;
+
+            transition:
+                0.4s ease;
+        }
+
+        .skill-card:hover .skill-icon {
+
+            background:
+                var(--accent);
+
+            transform:
+                rotate(-5deg)
+                scale(1.08);
+        }
+
+
+        .skill-icon i {
+
+            font-size: 28px;
+
+            color:
+                var(--accent);
+
+            transition:
+                0.4s ease;
+        }
+
+        .skill-card:hover .skill-icon i {
+            color: #111;
+        }
+
+
+        /* =====================================================
+           CARD CONTENT
+        ===================================================== */
+
+        .skill-card h3 {
+
+            font-size: 23px;
+
+            margin-bottom: 12px;
+
+            font-weight: 700;
+        }
+
+
+        .skill-card p {
+
+            color: var(--muted);
+
+            font-size: 14.5px;
+
+            line-height: 1.8;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* =====================================================
+           TECHNOLOGY TAGS
+        ===================================================== */
+
+        .tech-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .tech {
+
+            padding:
+                7px 12px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            color:
+                #d5d5d5;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .skill-card:hover .tech {
+
+            border-color:
+                rgba(212,175,55,0.30);
+
+            color:
+                var(--accent-light);
+        }
+
+
+        /* =====================================================
+           FEATURE CARD
+        ===================================================== */
+
+        .skill-card.featured {
+
+            grid-column:
+                span 2;
+
+            display: grid;
+
+            grid-template-columns:
+                90px 1fr;
+
+            gap: 25px;
+
+            align-items: start;
+
+            padding: 40px;
+        }
+
+        .skill-card.featured .skill-icon {
+            width: 80px;
+            height: 80px;
+
+            margin: 0;
+        }
+
+        .skill-card.featured .skill-icon i {
+            font-size: 34px;
+        }
+
+
+        /* =====================================================
+           SKILL LEVEL
+        ===================================================== */
+
+        .skill-level {
+
+            margin-top: 20px;
+        }
+
+        .level-top {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+
+            font-size: 12px;
+
+            color:
+                var(--muted);
+        }
+
+        .level-bar {
+
+            height: 5px;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+        .level-fill {
+
+            height: 100%;
+
+            width: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--accent-dark),
+                    var(--accent-light)
+                );
+
+            border-radius: 10px;
+
+            transition:
+                width 1.4s ease 0.5s;
+        }
+
+        .skill-card.show .level-fill {
+            width: var(--level);
+        }
+
+
+        /* =====================================================
+           SMALL TECH INTRO
+        ===================================================== */
+
+        .tech-intro {
+
+            text-align: center;
+
+            margin:
+                70px auto 35px;
+
+            color:
+                var(--muted);
+
+            font-size: 14px;
+        }
+
+        .tech-intro span {
+            color:
+                var(--accent);
+        }
+
+
+        /* =====================================================
+           TECH STACK STRIP
+        ===================================================== */
+
+        .tech-stack {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+
+        .stack-item {
+
+            padding:
+                10px 17px;
+
+            border:
+                1px solid
+                rgba(212,175,55,0.18);
+
+            border-radius: 30px;
+
+            color:
+                #d0d0d0;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            font-size: 13px;
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .stack-item i {
+
+            color:
+                var(--accent);
+
+            margin-right: 7px;
+        }
+
+
+        .stack-item:hover {
+
+            color:
+                var(--accent-light);
+
+            border-color:
+                var(--accent);
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        /* =====================================================
+           BACK BUTTON
+        ===================================================== */
+
+        .back-home {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap: 8px;
+
+            width:
+                fit-content;
+
+            margin:
+                55px auto 0;
+
+            padding:
+                12px 22px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius:
+                30px;
+
+            color:
+                var(--muted);
+
+            text-decoration:
+                none;
+
+            font-size:
+                13px;
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .back-home:hover {
+
+            color:
+                var(--accent);
+
+            border-color:
+                var(--accent);
+
+            transform:
+                translateX(-4px);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .skills {
+                padding:
+                    70px 5%;
+            }
+
+            .skills-container {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .skill-card.featured {
+                grid-column:
+                    span 1;
+
+                display: block;
+            }
+
+            .skill-card.featured .skill-icon {
+                margin-bottom:
+                    25px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .skills {
+                padding:
+                    55px 5%;
+            }
+
+            .skills-header {
+                margin-bottom:
+                    45px;
+            }
+
+            .skills-header h1 {
+                font-size:
+                    38px;
+            }
+
+            .skills-header p {
+                font-size:
+                    14px;
+            }
+
+            .skill-card {
+                padding:
+                    27px;
+            }
+
+            .skill-card h3 {
+                font-size:
+                    21px;
+            }
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     FLOATING PARTICLES
+===================================================== -->
+
+<div class="particles">
+
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+
+</div>
+
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section class="skills" id="skills">
+
+
+    <!-- HEADER -->
+
+    <div class="skills-header">
+
+        <div class="skills-label">
+            Technical Expertise
+        </div>
+
+        <h1>
+            My <span>Skills</span>
+        </h1>
+
+        <p>
+            Technologies and development skills I use to build
+            modern applications, connected systems and responsive
+            digital experiences.
+        </p>
+
+    </div>
+
+
+
+    <!-- SKILLS -->
+
+    <div class="skills-container">
+
+
+        <!-- =================================================
+             FLUTTER
+        ================================================== -->
+
+        <div class="skill-card featured">
+
+            <div class="skill-icon">
+
+                <i class="fa-solid fa-mobile-screen-button"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Flutter & Dart Development
+                </h3>
+
+                <p>
+                    Developing cross-platform applications using
+                    Flutter and Dart with responsive interfaces,
+                    reusable components and scalable application
+                    architecture. Focused on creating smooth,
+                    reliable and production-ready applications.
+                </p>
+
+
+                <div class="tech-list">
+
+                    <span class="tech">Flutter</span>
+                    <span class="tech">Dart</span>
+                    <span class="tech">Material UI</span>
+                    <span class="tech">Responsive UI</span>
+                    <span class="tech">State Management</span>
+
+                </div>
+
+
+                <div class="skill-level">
+
+                    <div>
+
+
+                    </div>
+
+                    <div>
+
+                        <div
+                            class="level-fill"
+                            style="--level:90%;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CLOUD
+        ================================================== -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+
+                <i class="fa-solid fa-cloud"></i>
+
+            </div>
+
+            <h3>
+                Cloud & Backend Services
+            </h3>
+
+            <p>
+                Working with cloud-based services to manage
+                authentication, application data, file storage
+                and backend functionality for modern applications.
+            </p>
+
+            <div class="tech-list">
+
+                <span class="tech">Firebase</span>
+                <span class="tech">Cloud Firestore</span>
+                <span class="tech">Cloudinary</span>
+                <span class="tech">Firebase Auth</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             API
+        ================================================== -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+
+                <i class="fa-solid fa-plug"></i>
+
+            </div>
+
+            <h3>
+                API Integration
+            </h3>
+
+            <p>
+               Connecting applications with external services to exchange data, access features and
+                handling authentication and communication between
+                frontend applications and backend services.
+            </p>
+
+            <div class="tech-list">
+
+                <span class="tech">API Integration</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             WEB DEVELOPMENT
+        ================================================== -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+            <h3>
+                Web Development
+            </h3>
+
+            <p>
+                Creating responsive and interactive websites
+                with clean layouts, modern styling and
+                JavaScript functionality optimized for
+                different screen sizes.
+            </p>
+
+            <div class="tech-list">
+
+                <span class="tech">HTML5</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+                <span class="tech">Responsive Design</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             DATABASE
+        ================================================== -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+
+                <i class="fa-solid fa-database"></i>
+
+            </div>
+
+            <h3>
+                Database Management
+            </h3>
+
+            <p>
+                Working with application databases to store,
+                retrieve and manage structured and
+                unstructured data efficiently.
+            </p>
+
+            <div class="tech-list">
+
+                <span class="tech">Firestore</span>
+                <span class="tech">sqlite</span>
+                <span class="tech">SQL</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SOFTWARE ENGINEERING
+        ================================================== -->
+
+        <div class="skill-card">
+
+            <div class="skill-icon">
+
+                <i class="fa-solid fa-gears"></i>
+
+            </div>
+
+            <h3>
+                Software Engineering
+            </h3>
+
+            <p>
+                Applying object-oriented programming, debugging,
+                version control and clean coding practices to
+                create maintainable and reliable software.
+            </p>
+
+            <div class="tech-list">
+
+                <span class="tech">OOP</span>
+                <span class="tech">Git</span>
+                <span class="tech">GitHub</span>
+                <span class="tech">Debugging</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TECH STACK
+    ====================================================== -->
+
+    <div class="tech-intro">
+
+        <span>Technologies</span> I work with
+
+    </div>
+
+
+    <div class="tech-stack">
+
+        <div class="stack-item">
+            <i class="fa-brands fa-flutter"></i>
+            Flutter
+        </div>
+
+        <div class="stack-item">
+            <i class="fa-solid fa-code"></i>
+            Dart
+        </div>
+
+        <div class="stack-item">
+            <i class="fa-solid fa-fire"></i>
+            Firebase
+        </div>
+
+        <div class="stack-item">
+            <i class="fa-solid fa-cloud"></i>
+            Cloudinary
+        </div>
+
+        <div class="stack-item">
+            <i class="fa-solid fa-plug"></i>
+                APIs
+        </div>
+
+        <div class="stack-item">
+            <i class="fa-brands fa-html5"></i>
+            HTML
+        </div>
+
+        <div class="stack-item">
+            <i class="fa-brands fa-css3-alt"></i>
+            CSS
+        </div>
+
+        <div class="stack-item">
+            <i class="fa-brands fa-js"></i>
+            JavaScript
+        </div>
+
+        <div class="stack-item">
+            <i class="fa-brands fa-github"></i>
+            GitHub
+        </div>
+
+        <div class="stack-item">
+            <i class="fa-solid fa-database"></i>
+            SQL
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         BACK
+    ====================================================== -->
+
+    <a href="index.html" class="back-home">
+
+        <i ></i>
+
+     ⬅ Back to Portfolio
+
+    </a>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /*
+     * Scroll Reveal Animation
+     */
+
+    const skillCards =
+        document.querySelectorAll('.skill-card');
+
+
+    const observer =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add('show');
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
+
+
+    skillCards.forEach(card => {
+
+        observer.observe(card);
+
+    });
+
+
+</script>
+
+
+</body>
+</html>

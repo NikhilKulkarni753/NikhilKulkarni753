@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Certificates | Nikhil</title>
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --bg: #0d0d0d;
+
+    --card: #161616;
+
+    --card-light: #1b1b1b;
+
+    --accent: #d4af37;
+
+    --accent-light: #f2d675;
+
+    --accent-dark: #a98619;
+
+    --white: #ffffff;
+
+    --muted: #b3b3b3;
+
+    --border: rgba(255,255,255,0.09);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family:
+        'Inter',
+        'Segoe UI',
+        sans-serif;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: var(--bg);
+
+    color: var(--white);
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 550px;
+
+    height: 550px;
+
+    top: -250px;
+
+    left: -220px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(212,175,55,0.11),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: -2;
+
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 550px;
+
+    height: 550px;
+
+    right: -250px;
+
+    bottom: -250px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(212,175,55,0.08),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: -2;
+
+}
+
+
+/* =========================================================
+   FLOATING PARTICLES
+========================================================= */
+
+.particles {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+}
+
+
+.particle {
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    opacity: 0;
+
+    animation:
+        particleFloat linear infinite;
+
+}
+
+
+.particle:nth-child(1) {
+
+    left: 8%;
+
+    animation-duration: 14s;
+
+    animation-delay: 1s;
+
+}
+
+
+.particle:nth-child(2) {
+
+    left: 18%;
+
+    animation-duration: 18s;
+
+    animation-delay: 4s;
+
+}
+
+
+.particle:nth-child(3) {
+
+    left: 32%;
+
+    animation-duration: 13s;
+
+    animation-delay: 2s;
+
+}
+
+
+.particle:nth-child(4) {
+
+    left: 48%;
+
+    animation-duration: 20s;
+
+    animation-delay: 5s;
+
+}
+
+
+.particle:nth-child(5) {
+
+    left: 63%;
+
+    animation-duration: 16s;
+
+    animation-delay: 3s;
+
+}
+
+
+.particle:nth-child(6) {
+
+    left: 78%;
+
+    animation-duration: 19s;
+
+    animation-delay: 1s;
+
+}
+
+
+.particle:nth-child(7) {
+
+    left: 91%;
+
+    animation-duration: 15s;
+
+    animation-delay: 6s;
+
+}
+
+
+@keyframes particleFloat {
+
+    0% {
+
+        transform:
+            translateY(110vh)
+            scale(0);
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: 0.35;
+
+    }
+
+    80% {
+
+        opacity: 0.35;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-10vh)
+            scale(1);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   CERTIFICATE SECTION
+========================================================= */
+
+.certificates {
+
+    min-height: 100vh;
+
+    padding:
+        90px
+        8%
+        80px;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.cert-header {
+
+    text-align: center;
+
+    max-width: 800px;
+
+    margin:
+        0 auto
+        70px;
+
+    animation:
+        headerReveal
+        1s
+        ease
+        forwards;
+
+}
+
+
+@keyframes headerReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.section-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--accent);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 16px;
+
+}
+
+
+.section-label::before,
+.section-label::after {
+
+    content: "";
+
+    width: 28px;
+
+    height: 1px;
+
+    background:
+        var(--accent);
+
+}
+
+
+.cert-header h1 {
+
+    font-size:
+        clamp(40px, 6vw, 62px);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+
+}
+
+
+.cert-header h1 span {
+
+    color:
+        var(--accent);
+
+}
+
+
+.cert-header p {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    color:
+        var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   CERTIFICATE COUNTER
+========================================================= */
+
+.cert-counter {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 28px;
+
+}
+
+
+.counter-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        10px 18px;
+
+    border:
+        1px solid
+        rgba(212,175,55,0.2);
+
+    border-radius: 30px;
+
+    background:
+        rgba(212,175,55,0.05);
+
+    color:
+        var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+.counter-box i {
+
+    color:
+        var(--accent);
+
+}
+
+
+.counter-number {
+
+    color:
+        var(--accent-light);
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   CERTIFICATE GRID
+========================================================= */
+
+.cert-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* =========================================================
+   CERTIFICATE CARD
+========================================================= */
+
+.cert-card {
+
+    position: relative;
+
+    padding:
+        34px 30px;
+
+    min-height: 350px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.012)
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+
+        opacity 0.7s ease,
+
+        transform 0.7s ease,
+
+        border-color 0.4s ease,
+
+        box-shadow 0.4s ease;
+
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.cert-card.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* Stagger */
+
+.cert-card:nth-child(2) {
+
+    transition-delay:
+        0.08s;
+
+}
+
+.cert-card:nth-child(3) {
+
+    transition-delay:
+        0.16s;
+
+}
+
+.cert-card:nth-child(4) {
+
+    transition-delay:
+        0.24s;
+
+}
+
+.cert-card:nth-child(5) {
+
+    transition-delay:
+        0.32s;
+
+}
+
+.cert-card:nth-child(6) {
+
+    transition-delay:
+        0.40s;
+
+}
+
+.cert-card:nth-child(7) {
+
+    transition-delay:
+        0.48s;
+
+}
+
+.cert-card:nth-child(8) {
+
+    transition-delay:
+        0.56s;
+
+}
+
+.cert-card:nth-child(9) {
+
+    transition-delay:
+        0.64s;
+
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.cert-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(212,175,55,0.65);
+
+    box-shadow:
+
+        0 20px 50px
+        rgba(0,0,0,0.55),
+
+        0 0 30px
+        rgba(212,175,55,0.06);
+
+}
+
+
+/* =========================================================
+   CARD GLOW
+========================================================= */
+
+.cert-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    top: -100px;
+
+    right: -100px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(212,175,55,0.14),
+            transparent 70%
+        );
+
+    transition:
+        transform 0.5s ease;
+
+}
+
+
+.cert-card:hover::before {
+
+    transform:
+        scale(1.8);
+
+}
+
+
+/* =========================================================
+   CERTIFICATE ICON
+========================================================= */
+
+.cert-icon {
+
+    width: 62px;
+
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        rgba(212,175,55,0.09);
+
+    border:
+        1px solid
+        rgba(212,175,55,0.20);
+
+    margin-bottom: 23px;
+
+    transition:
+        0.4s ease;
+
+}
+
+
+.cert-icon i {
+
+    font-size: 27px;
+
+    color:
+        var(--accent);
+
+    transition:
+        0.4s ease;
+
+}
+
+
+.cert-card:hover .cert-icon {
+
+    background:
+        var(--accent);
+
+    transform:
+        rotate(-5deg)
+        scale(1.08);
+
+}
+
+
+.cert-card:hover .cert-icon i {
+
+    color:
+        #111;
+
+}
+
+
+/* =========================================================
+   CERTIFICATE NUMBER
+========================================================= */
+
+.cert-number {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 25px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color:
+        rgba(255,255,255,0.25);
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.cert-card h3 {
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    margin-bottom: 9px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   ISSUER
+========================================================= */
+
+.issuer {
+
+    display: block;
+
+    color:
+        var(--accent);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform:
+        uppercase;
+
+    margin-bottom: 17px;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.cert-card p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        13.5px;
+
+    line-height:
+        1.75;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.view-btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap: 8px;
+
+    padding:
+        9px 17px;
+
+    border:
+        1px solid
+        rgba(212,175,55,0.55);
+
+    border-radius:
+        25px;
+
+    color:
+        var(--accent);
+
+    text-decoration:
+        none;
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+
+    transition:
+        0.35s ease;
+
+}
+
+
+.view-btn i {
+
+    font-size:
+        11px;
+
+    transition:
+        transform 0.35s ease;
+
+}
+
+
+.view-btn:hover {
+
+    background:
+        var(--accent);
+
+    color:
+        #000;
+
+    border-color:
+        var(--accent);
+
+}
+
+
+.view-btn:hover i {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* =========================================================
+   BOTTOM DIVIDER
+========================================================= */
+
+.bottom-line {
+
+    width:
+        100%;
+
+    max-width:
+        900px;
+
+    height:
+        1px;
+
+    margin:
+        70px auto 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(212,175,55,0.35),
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   BACK TO PORTFOLIO
+========================================================= */
+
+.back-home {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap: 8px;
+
+            width:
+                fit-content;
+
+            margin:
+                55px auto 0;
+
+            padding:
+                12px 22px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius:
+                30px;
+
+            color:
+                var(--muted);
+
+            text-decoration:
+                none;
+
+            font-size:
+                13px;
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .back-home:hover {
+
+            color:
+                var(--accent);
+
+            border-color:
+                var(--accent);
+
+            transform:
+                translateX(-4px);
+        }
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .cert-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .certificates {
+
+        padding:
+            60px 5%
+            60px;
+
+    }
+
+
+    .cert-header {
+
+        margin-bottom:
+            50px;
+
+    }
+
+
+    .cert-header h1 {
+
+        font-size:
+            40px;
+
+    }
+
+
+    .cert-header p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .cert-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            20px;
+
+    }
+
+
+    .cert-card {
+
+        min-height:
+            auto;
+
+        padding:
+            30px 25px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     FLOATING PARTICLES
+===================================================== -->
+
+<div class="particles">
+
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+
+</div>
+
+
+
+<!-- =====================================================
+     CERTIFICATES
+===================================================== -->
+
+<section class="certificates"
+         id="certificates">
+
+
+    <!-- HEADER -->
+
+    <div class="cert-header">
+
+
+        <div class="section-label">
+
+            Professional Learning
+
+        </div>
+
+
+        <h1>
+
+            My <span>Certificates</span>
+
+        </h1>
+
+
+        <p>
+
+            A collection of certifications and learning
+            achievements that reflect my continuous growth
+            across software development, programming,
+            web technologies and emerging technologies.
+
+        </p>
+
+
+        <!-- COUNTER -->
+
+        <div class="cert-counter">
+
+            <div class="counter-box">
+
+                <i class="fa-solid fa-award"></i>
+
+                <span>
+
+                    <span class="counter-number"
+                          id="certificateCount">
+                        0
+                    </span>
+
+                    Certifications
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         CERTIFICATE GRID
+    ================================================== -->
+
+    <div class="cert-grid">
+
+
+
+        <!-- 01 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                01
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-brands fa-js"></i>
+
+            </div>
+
+
+            <h3>
+                JavaScript
+            </h3>
+
+
+            <span class="issuer">
+                LinkedIn
+            </span>
+
+
+            <p>
+
+                I have mastered JavaScript as the engine
+                of web interactivity, moving beyond static
+                layouts to build dynamic, reactive user
+                experiences. By bridging structure and
+                styling, I use JavaScript to transform
+                design concepts into functional interfaces.
+
+            </p>
+
+
+            <a href="certificates/Javascript .pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 02 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                02
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+
+            <h3>
+                Applications of (AI/ML)
+            </h3>
+
+
+            <span class="issuer">
+                ISRO
+            </span>
+
+
+            <p>
+
+                I have explored the practical applications
+                of AI and Machine Learning, focusing on how
+                data-driven models can enhance user
+                experiences and create personalized and
+                predictive solutions.
+
+            </p>
+
+
+            <a href="certificates/Certificate.pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 03 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                03
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-brands fa-python"></i>
+
+            </div>
+
+
+            <h3>
+                Machine Learning with Python
+            </h3>
+
+
+            <span class="issuer">
+                LinkedIn
+            </span>
+
+
+            <p>
+
+                I have developed a strong foundation in
+                Python programming and its application in
+                building and deploying predictive models,
+                working with data and intelligent solutions.
+
+            </p>
+
+
+            <a href="certificates/Machine learning.pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 04 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                04
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-brands fa-react"></i>
+
+            </div>
+
+
+            <h3>
+                React
+            </h3>
+
+
+            <span class="issuer">
+                LinkedIn
+            </span>
+
+
+            <p>
+
+                Through my work with React, I have developed
+                experience building high-performance reactive
+                user interfaces by breaking complex layouts
+                into reusable components.
+
+            </p>
+
+
+            <a href="certificates/React.pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 05 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                05
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-solid fa-window-maximize"></i>
+
+            </div>
+
+
+            <h3>
+                Python GUI Development with Tkinter
+            </h3>
+
+
+            <span class="issuer">
+                LinkedIn
+            </span>
+
+
+            <p>
+
+                Through my work with Tkinter, I have learned
+                to transform Python scripts into desktop
+                applications by designing intuitive
+                graphical user interfaces.
+
+            </p>
+
+
+            <a href="certificates/Python GUI Development .pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 06 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                06
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-brands fa-java"></i>
+
+            </div>
+
+
+            <h3>
+                Java
+            </h3>
+
+
+            <span class="issuer">
+                LinkedIn
+            </span>
+
+
+            <p>
+
+                Through my work with Java, I have developed
+                a strong foundation in Object-Oriented
+                Programming, allowing me to build robust,
+                scalable and secure applications.
+
+            </p>
+
+
+            <a href="certificates/Java.pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 07 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                07
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+            </div>
+
+
+            <h3>
+                Java Collections
+            </h3>
+
+
+            <span class="issuer">
+                LinkedIn
+            </span>
+
+
+            <p>
+
+                Through my work with the Java Collections
+                Framework, I have learned to efficiently
+                store and manipulate groups of data using
+                structured architectures such as Lists,
+                Sets and Maps.
+
+            </p>
+
+
+            <a href="certificates/Java Collection.pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 08 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                08
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+
+            <h3>
+                Java Objects and APIs
+            </h3>
+
+
+            <span class="issuer">
+                LinkedIn
+            </span>
+
+
+            <p>
+
+                Through my work with Java Objects and APIs,
+                I have learned the principles of Object-Oriented
+                Programming and how to create modular and
+                reusable code using Java APIs.
+
+            </p>
+
+
+            <a href="certificates/Java Object and API.pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 09 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                09
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-solid fa-database"></i>
+
+            </div>
+
+
+            <h3>
+                Java Database Connectivity (JDBC)
+            </h3>
+
+
+            <span class="issuer">
+                LinkedIn
+            </span>
+
+
+            <p>
+
+                Through my work with Java Database
+                Connectivity, I have learned to connect
+                Java applications with relational databases
+                and perform application data operations.
+
+            </p>
+
+
+            <a href="certificates/JDBC.pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 10 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                10
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-solid fa-terminal"></i>
+
+            </div>
+
+
+            <h3>
+                C (Programming Language)
+            </h3>
+
+
+            <span class="issuer">
+                LinkedIn
+            </span>
+
+
+            <p>
+
+                Through my work with C, I have gained
+                an understanding of programming fundamentals,
+                memory management and low-level programming
+                concepts.
+
+            </p>
+
+
+            <a href="certificates/C language  (1).pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 11 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                11
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-solid fa-flask"></i>
+
+            </div>
+
+
+            <h3>
+                Flask
+            </h3>
+
+
+            <span class="issuer">
+                LinkedIn
+            </span>
+
+
+            <p>
+
+                Through my work with Flask, I have learned
+                to build lightweight and flexible web
+                applications using Python's micro-framework.
+
+            </p>
+
+
+            <a href="certificates/Flask.pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- 12 -->
+
+        <div class="cert-card">
+
+            <span class="cert-number">
+                12
+            </span>
+
+
+            <div class="cert-icon">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            </div>
+
+
+            <h3>
+                Animation Fundamentals
+            </h3>
+
+
+            <span class="issuer">
+                LinkedIn
+            </span>
+
+
+            <p>
+
+                Through my work with Animation Fundamentals,
+                I have learned core principles such as timing,
+                easing, transitions and keyframes to create
+                engaging digital experiences.
+
+            </p>
+
+
+            <a href="certificates/Animation fundamentals .pdf"
+               class="view-btn">
+
+                View Certificate
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- DIVIDER -->
+
+    <div class="bottom-line"></div>
+
+
+
+    <!-- BACK -->
+
+    <a href="index.html" class="back-home">
+
+        <i ></i>
+
+     ⬅ Back to Portfolio
+
+    </a>
+
+
+</section>
+
+
+
+<script>
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const cards =
+    document.querySelectorAll('.cert-card');
+
+
+const observer =
+    new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (
+                    entry.isIntersecting
+                ) {
+
+                    entry.target.classList.add(
+                        'show'
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+cards.forEach(card => {
+
+    observer.observe(card);
+
+});
+
+
+
+/* =========================================================
+   CERTIFICATE COUNTER
+========================================================= */
+
+const counter =
+    document.getElementById(
+        'certificateCount'
+    );
+
+
+const totalCertificates =
+    document.querySelectorAll(
+        '.cert-card'
+    ).length;
+
+
+let current =
+    0;
+
+
+const duration =
+    1000;
+
+
+const increment =
+    totalCertificates /
+    (duration / 50);
+
+
+const counterTimer =
+    setInterval(() => {
+
+        current += increment;
+
+
+        if (
+            current >=
+            totalCertificates
+        ) {
+
+            current =
+                totalCertificates;
+
+            clearInterval(
+                counterTimer
+            );
+
+        }
+
+
+        counter.textContent =
+            Math.floor(current);
+
+    }, 50);
+
+</script>
+
+
+</body>
+
+</html>
